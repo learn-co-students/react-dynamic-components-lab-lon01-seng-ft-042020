@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import classes from './index.css';
-import { ElementClass } from 'enzyme';
 
-class Comment extends React.Component {
+class Comment extends Component {
     render() {
         return (
             <div className="comment">
