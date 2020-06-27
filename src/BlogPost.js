@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// are we missing an import?
+import Comment from './Comment.js'
 
 export default class BlogPost extends Component {
   render() {
@@ -18,12 +18,20 @@ export default class BlogPost extends Component {
         Still I'll rise.<br/>
         -Maya Angelou<br/>
 
-        {/* (remove the comment ticks and their surrounding brackets)
-        <Comment commentText={comments[0]} />
-        <Comment commentText={comments[0]} />
-        <Comment commentText={comments[0]} />
-        */}
+      {/* Iterate over the comments array & for each comment, 
+       render a Comment component with a unique key 
+      & pass it a props called commentText 
+      whose value is a comment (element) from the comments array*/}
+       { comments.map( (comment, index) => { 
+        return (
+          <Comment key = {index} commentText = {comment} />
+       )}) }
+       
+       {/* Note: When using .map(), you must give each element a unique key 
+       & explicitly return something */}
+       
       </div>
     );
   }
 }
+
